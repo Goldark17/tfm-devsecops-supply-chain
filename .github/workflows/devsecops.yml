@@ -124,6 +124,42 @@ jobs:
           print(f"| Syft (SBOM) | {lib} | librerías, de {len(c)} entradas | {t['syft']:.1f} |")
           PY
 
+      - name: Quality gate (politica de seguridad)
+        run: |
+          python3 - << 'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json, sys
+          R = "lab/results/"
+          MAX_PRIVATE_KEYS = 0
+          MAX_CRITICAL_CODE = 0
+          MAX_CRITICAL_IMAGE = 0
+          MAX_SEMGREP_ERROR = 0
+          def crit(f):
+              d = json.load(open(R + f))
+              v = [x for r in d.get("Results", []) for x in (r.get("Vulnerabilities") or [])]
+              return sum(1 for x in v if x["Severity"] == "CRITICAL")
+          keys = sum(1 for x in json.load(open(R + "gitleaks.json")) if x["RuleID"] == "private-key")
+          sem = sum(1 for x in json.load(open(R + "semgrep.json"))["results"] if x["extra"]["severity"] == "ERROR")
+          checks = [
+              ("Secretos: claves privadas (Gitleaks)", keys, MAX_PRIVATE_KEYS),
+              ("Dependencias: CRITICAL (Trivy, código)", crit("trivy-fs.json"), MAX_CRITICAL_CODE),
+              ("Imagen: CRITICAL (Trivy, contenedor)", crit("trivy-image.json"), MAX_CRITICAL_IMAGE),
+              ("SAST: severidad ERROR (Semgrep)", sem, MAX_SEMGREP_ERROR),
+          ]
+          print()
+          print("## Quality gate")
+          print()
+          print("| Control | Encontrado | Máximo permitido | Resultado |")
+          print("|---|---|---|---|")
+          fail = False
+          for name, found, limit in checks:
+              ok = found <= limit
+              fail = fail or not ok
+              print(f"| {name} | {found} | {limit} | {'OK' if ok else 'BLOQUEA'} |")
+          print()
+          print("**Veredicto: " + ("PIPELINE BLOQUEADO" if fail else "PIPELINE APROBADO") + "**")
+          sys.exit(1 if fail else 0)
+          PY
+
       - name: Subir informes
         if: always()
         uses: actions/upload-artifact@v4

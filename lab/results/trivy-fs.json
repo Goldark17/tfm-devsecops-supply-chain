@@ -1,0 +1,19 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.76.1"
+  },
+  "ReportID": "01a1ab34-6b75-7bd3-933f-6a4d4582a76d",
+  "CreatedAt": "2026-11-05T10:15:01.749779071Z",
+  "ArtifactID": "sha256:c0a33eb9d3b588bbb263424c238412410b5e873487c72edcdf20b10be1f1d7f2",
+  "ArtifactName": "/src",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "https://github.com/juice-shop/juice-shop.git",
+    "Branch": "master",
+    "Commit": "717f5efa886b0417eeecb52378b03cf10567b7e2",
+    "CommitMsg": "Pre-add `tags.yml` coming with v20.4.0",
+    "Author": "Bjoern Kimminich \u003cbjoern.kimminich@kuehne-nagel.com\u003e",
+    "Committer": "Bjoern Kimminich \u003cbjoern.kimminich@kuehne-nagel.com\u003e"
+  }
+}

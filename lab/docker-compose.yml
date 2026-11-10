@@ -35,7 +35,7 @@ services:
 
   lockfile:
     profiles: ["scan"]
-    image: node:22
+    image: ${NODE_IMAGE}
     working_dir: /app
     volumes:
       - ./target/juice-shop:/app
@@ -81,6 +81,18 @@ services:
     command: >
       ${JUICE_SHOP_IMAGE}
       -o cyclonedx-json=/results/sbom-image.cdx.json
+
+  # Semgrep aplicado al propio pipeline (.github/), no a Juice Shop.
+  # Sirve para medir el antes/despues del endurecimiento.
+  semgrep-self:
+    profiles: ["scan"]
+    image: ${SEMGREP_IMAGE}
+    volumes:
+      - ../.github:/repo/.github
+      - ./results:/results
+    command: >
+      semgrep scan --config p/github-actions --metrics=off
+      --json -o /results/semgrep-self.json /repo
 
 volumes:
   trivy-cache:

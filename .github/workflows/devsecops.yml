@@ -16,123 +16,31 @@ on:
         description: "Max. hallazgos ERROR permitidos (Semgrep)"
         default: "0"
 
+# Permisos minimos: el pipeline solo lee el repositorio.
 permissions:
   contents: read
-
-env:
-  JUICE_SHOP_REPO: https://github.com/juice-shop/juice-shop.git
-  JUICE_SHOP_COMMIT: 717f5efa886b0417eeecb52378b03cf10567b7e2
-  JUICE_SHOP_IMAGE: bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4
-  GITLEAKS_IMAGE: zricethezav/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f # 8.30.1
-  SEMGREP_IMAGE: semgrep/semgrep@sha256:451b3d875c00dac7ed5db5293e584a07de11449a409c10b3c2d2652f429630b6 # 1.182.1
-  TRIVY_IMAGE: aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c # 0.76.1
-  SYFT_IMAGE: anchore/syft@sha256:697ae864af1299cfa43c54b161cea3dd65c6d54de82e3dba66ea3dccb3acc313 # 1.56.0
 
 jobs:
   scan:
     runs-on: ubuntu-24.04
     steps:
+      # Acciones fijadas por hash de commit (no por etiqueta mutable).
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
-      - name: Preparar objetivo (Juice Shop en commit fijo)
-        run: |
-          mkdir -p lab/results
-          git init lab/target/juice-shop
-          git -C lab/target/juice-shop fetch --depth 1 "$JUICE_SHOP_REPO" "$JUICE_SHOP_COMMIT"
-          git -C lab/target/juice-shop checkout FETCH_HEAD
-          echo "herramienta,milisegundos" > lab/results/tiempos.csv
+      # Mismo laboratorio que en local: lab/docker-compose.yml + lab/.env
+      - name: Escaneres (Docker Compose)
+        run: bash lab/run-all.sh
 
-      - name: Gitleaks (secretos)
-        run: |
-          s=$(date +%s%N)
-          docker run --rm \
-            -v "$PWD/lab/target/juice-shop:/path" \
-            -v "$PWD/lab/results:/results" \
-            "$GITLEAKS_IMAGE" dir /path --redact --exit-code 0 \
-            --report-format json --report-path /results/gitleaks.json
-          e=$(date +%s%N); echo "gitleaks,$(( (e-s)/1000000 ))" >> lab/results/tiempos.csv
-
-      - name: Semgrep (SAST)
-        run: |
-          s=$(date +%s%N)
-          docker run --rm \
-            -v "$PWD/lab/target/juice-shop:/src" \
-            -v "$PWD/lab/results:/results" \
-            "$SEMGREP_IMAGE" semgrep scan \
-            --config p/javascript --config p/typescript --config p/owasp-top-ten \
-            --metrics=off --json -o /results/semgrep.json /src
-          e=$(date +%s%N); echo "semgrep,$(( (e-s)/1000000 ))" >> lab/results/tiempos.csv
-
-      - name: Generar lockfile y descargar base de datos de Trivy
-        run: |
-          docker run --rm -v "$PWD/lab/target/juice-shop:/app" -w /app node:22 \
-            npm install --package-lock-only --package-lock=true --ignore-scripts --legacy-peer-deps
-          docker run --rm -v trivy-cache:/root/.cache \
-            "$TRIVY_IMAGE" image --download-db-only
-
-      - name: Trivy (dependencias del codigo)
-        run: |
-          s=$(date +%s%N)
-          docker run --rm \
-            -v trivy-cache:/root/.cache \
-            -v "$PWD/lab/target/juice-shop:/src" \
-            -v "$PWD/lab/results:/results" \
-            "$TRIVY_IMAGE" fs --scanners vuln --skip-db-update \
-            --format json --output /results/trivy-fs.json /src
-          e=$(date +%s%N); echo "trivy-fs,$(( (e-s)/1000000 ))" >> lab/results/tiempos.csv
-
-      - name: Trivy (imagen del contenedor)
-        run: |
-          docker pull "$JUICE_SHOP_IMAGE"
-          s=$(date +%s%N)
-          docker run --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            -v trivy-cache:/root/.cache \
-            -v "$PWD/lab/results:/results" \
-            "$TRIVY_IMAGE" image --scanners vuln --skip-db-update \
-            --format json --output /results/trivy-image.json "$JUICE_SHOP_IMAGE"
-          e=$(date +%s%N); echo "trivy-image,$(( (e-s)/1000000 ))" >> lab/results/tiempos.csv
-
-      - name: Syft (SBOM)
-        run: |
-          s=$(date +%s%N)
-          docker run --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            -v "$PWD/lab/results:/results" \
-            "$SYFT_IMAGE" "$JUICE_SHOP_IMAGE" \
-            -o cyclonedx-json=/results/sbom-image.cdx.json
-          e=$(date +%s%N); echo "syft,$(( (e-s)/1000000 ))" >> lab/results/tiempos.csv
+      - name: Semgrep sobre el propio pipeline (.github)
+        working-directory: lab
+        run: docker compose run --rm -T semgrep-self
 
       - name: Resumen de resultados
         if: always()
-        run: |
-          python3 - << 'PY' >> "$GITHUB_STEP_SUMMARY"
-          import json, collections, csv
-          R = "lab/results/"
-          t = {r["herramienta"]: int(r["milisegundos"]) / 1000 for r in csv.DictReader(open(R + "tiempos.csv"))}
-          def fmt(c):
-              return ", ".join(f"{k}: {v}" for k, v in c.most_common())
-          def trivy(f):
-              d = json.load(open(R + f))
-              v = [x for r in d.get("Results", []) for x in (r.get("Vulnerabilities") or [])]
-              return len(v), fmt(collections.Counter(x["Severity"] for x in v))
-          print("## Resultados del pipeline")
-          print()
-          print("| Herramienta | Hallazgos | Detalle | Tiempo (s) |")
-          print("|---|---|---|---|")
-          g = json.load(open(R + "gitleaks.json"))
-          print(f"| Gitleaks | {len(g)} | {fmt(collections.Counter(x['RuleID'] for x in g))} | {t['gitleaks']:.1f} |")
-          s = json.load(open(R + "semgrep.json"))["results"]
-          print(f"| Semgrep | {len(s)} | {fmt(collections.Counter(x['extra']['severity'] for x in s))} | {t['semgrep']:.1f} |")
-          n, det = trivy("trivy-fs.json")
-          print(f"| Trivy (código) | {n} | {det} | {t['trivy-fs']:.1f} |")
-          n, det = trivy("trivy-image.json")
-          print(f"| Trivy (imagen) | {n} | {det} | {t['trivy-image']:.1f} |")
-          c = json.load(open(R + "sbom-image.cdx.json"))["components"]
-          lib = sum(1 for x in c if x["type"] == "library")
-          print(f"| Syft (SBOM) | {lib} | librerías, de {len(c)} entradas | {t['syft']:.1f} |")
-          PY
+        run: python3 lab/resumen.py >> "$GITHUB_STEP_SUMMARY"
 
       # shell: bash => bash -eo pipefail, para que el exit 1 de Python no se pierda tras el tee
       - name: Quality gate (politica de seguridad)
@@ -149,17 +57,20 @@ jobs:
           MAX_CRITICAL_CODE = int(os.environ["MAX_CRITICAL"])
           MAX_CRITICAL_IMAGE = int(os.environ["MAX_CRITICAL"])
           MAX_SEMGREP_ERROR = int(os.environ["MAX_SEMGREP_ERROR"])
+          MAX_PIPELINE_FINDINGS = 0
           def crit(f):
               d = json.load(open(R + f))
               v = [x for r in d.get("Results", []) for x in (r.get("Vulnerabilities") or [])]
               return sum(1 for x in v if x["Severity"] == "CRITICAL")
           keys = sum(1 for x in json.load(open(R + "gitleaks.json")) if x["RuleID"] == "private-key")
           sem = sum(1 for x in json.load(open(R + "semgrep.json"))["results"] if x["extra"]["severity"] == "ERROR")
+          own = len(json.load(open(R + "semgrep-self.json"))["results"])
           checks = [
               ("Secretos: claves privadas (Gitleaks)", keys, MAX_PRIVATE_KEYS),
               ("Dependencias: CRITICAL (Trivy, código)", crit("trivy-fs.json"), MAX_CRITICAL_CODE),
               ("Imagen: CRITICAL (Trivy, contenedor)", crit("trivy-image.json"), MAX_CRITICAL_IMAGE),
               ("SAST: severidad ERROR (Semgrep)", sem, MAX_SEMGREP_ERROR),
+              ("Pipeline: hallazgos de Semgrep en .github", own, MAX_PIPELINE_FINDINGS),
           ]
           print()
           print("## Quality gate")
@@ -178,7 +89,7 @@ jobs:
 
       - name: Subir informes
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: informes-seguridad
           path: lab/results/

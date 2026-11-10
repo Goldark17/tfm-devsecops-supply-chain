@@ -5,6 +5,16 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      max_private_keys:
+        description: "Max. claves privadas permitidas (Gitleaks)"
+        default: "0"
+      max_critical:
+        description: "Max. CRITICAL permitidos (Trivy codigo e imagen)"
+        default: "0"
+      max_semgrep_error:
+        description: "Max. hallazgos ERROR permitidos (Semgrep)"
+        default: "0"
 
 permissions:
   contents: read
@@ -124,15 +134,21 @@ jobs:
           print(f"| Syft (SBOM) | {lib} | librerías, de {len(c)} entradas | {t['syft']:.1f} |")
           PY
 
+      # shell: bash => bash -eo pipefail, para que el exit 1 de Python no se pierda tras el tee
       - name: Quality gate (politica de seguridad)
+        shell: bash
+        env:
+          MAX_PRIVATE_KEYS: ${{ inputs.max_private_keys || '0' }}
+          MAX_CRITICAL: ${{ inputs.max_critical || '0' }}
+          MAX_SEMGREP_ERROR: ${{ inputs.max_semgrep_error || '0' }}
         run: |
           python3 - << 'PY' | tee -a "$GITHUB_STEP_SUMMARY"
-          import json, sys
+          import json, os, sys
           R = "lab/results/"
-          MAX_PRIVATE_KEYS = 0
-          MAX_CRITICAL_CODE = 0
-          MAX_CRITICAL_IMAGE = 0
-          MAX_SEMGREP_ERROR = 0
+          MAX_PRIVATE_KEYS = int(os.environ["MAX_PRIVATE_KEYS"])
+          MAX_CRITICAL_CODE = int(os.environ["MAX_CRITICAL"])
+          MAX_CRITICAL_IMAGE = int(os.environ["MAX_CRITICAL"])
+          MAX_SEMGREP_ERROR = int(os.environ["MAX_SEMGREP_ERROR"])
           def crit(f):
               d = json.load(open(R + f))
               v = [x for r in d.get("Results", []) for x in (r.get("Vulnerabilities") or [])]

@@ -1,6 +1,87 @@
+# Laboratorio reproducible: objetivo (Juice Shop) + escaneres de seguridad.
+# Las versiones/digests estan en lab/.env.
+#
+#   docker compose up -d                 -> levanta solo Juice Shop (puerto 3000)
+#   docker compose run --rm -T gitleaks  -> lanza un escaner concreto
+#   bash run-all.sh                      -> lanza todo el flujo completo
+
 services:
   juice-shop:
-    image: bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4
+    image: ${JUICE_SHOP_IMAGE}
     container_name: juice-shop
     ports:
       - "3000:3000"
+
+  gitleaks:
+    profiles: ["scan"]
+    image: ${GITLEAKS_IMAGE}
+    volumes:
+      - ./target/juice-shop:/path
+      - ./results:/results
+    command: >
+      dir /path --redact --exit-code 0
+      --report-format json --report-path /results/gitleaks.json
+
+  semgrep:
+    profiles: ["scan"]
+    image: ${SEMGREP_IMAGE}
+    volumes:
+      - ./target/juice-shop:/src
+      - ./results:/results
+    command: >
+      semgrep scan
+      --config p/javascript --config p/typescript --config p/owasp-top-ten
+      --metrics=off --json -o /results/semgrep.json /src
+
+  lockfile:
+    profiles: ["scan"]
+    image: node:22
+    working_dir: /app
+    volumes:
+      - ./target/juice-shop:/app
+    command: >
+      npm install --package-lock-only --package-lock=true
+      --ignore-scripts --legacy-peer-deps
+
+  trivy-db:
+    profiles: ["scan"]
+    image: ${TRIVY_IMAGE}
+    volumes:
+      - trivy-cache:/root/.cache
+    command: image --download-db-only
+
+  trivy-fs:
+    profiles: ["scan"]
+    image: ${TRIVY_IMAGE}
+    volumes:
+      - trivy-cache:/root/.cache
+      - ./target/juice-shop:/src
+      - ./results:/results
+    command: >
+      fs --scanners vuln --skip-db-update
+      --format json --output /results/trivy-fs.json /src
+
+  trivy-image:
+    profiles: ["scan"]
+    image: ${TRIVY_IMAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - trivy-cache:/root/.cache
+      - ./results:/results
+    command: >
+      image --scanners vuln --skip-db-update
+      --format json --output /results/trivy-image.json ${JUICE_SHOP_IMAGE}
+
+  syft:
+    profiles: ["scan"]
+    image: ${SYFT_IMAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./results:/results
+    command: >
+      ${JUICE_SHOP_IMAGE}
+      -o cyclonedx-json=/results/sbom-image.cdx.json
+
+volumes:
+  trivy-cache:
+    name: trivy-cache

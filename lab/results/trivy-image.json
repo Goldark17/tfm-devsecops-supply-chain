@@ -3,10 +3,10 @@
   "Trivy": {
     "Version": "0.76.1"
   },
-  "ReportID": "01a1ab36-2b50-75d7-8b26-348c55f9c1f5",
-  "CreatedAt": "2026-11-05T10:16:56.40038667Z",
+  "ReportID": "01a1c4fa-f6cc-7a18-8f32-e22d9c785e97",
+  "CreatedAt": "2026-11-10T10:22:23.94866427Z",
   "ArtifactID": "sha256:8a0943ea9aab32241808cdb26f2d93264ab694b55d1d632c37dd391f352e369d",
-  "ArtifactName": "bkimminich/juice-shop:latest",
+  "ArtifactName": "bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4",
   "ArtifactType": "container_image",
   "Metadata": {
     "Size": 363590144,
@@ -42,12 +42,13 @@
       "sha256:0044631e5931380321834e219013604085d13eb7cbcc9bc43a3c0f9eb9ffb3c3"
     ],
     "RepoTags": [
-      "bkimminich/juice-shop:latest"
+      "bkimminich/juice-shop:latest",
+      "bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4"
     ],
     "RepoDigests": [
       "bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4"
     ],
-    "Reference": "bkimminich/juice-shop:latest",
+    "Reference": "bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4",
     "ImageConfig": {
       "architecture": "amd64",
       "created": "2026-10-12T14:53:52.591317154Z",
@@ -375,7 +376,7 @@
   },
   "Results": [
     {
-      "Target": "bkimminich/juice-shop:latest (debian 13.7)",
+      "Target": "bkimminich/juice-shop@sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4 (debian 13.7)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Packages": [
@@ -2241,7 +2242,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6f5f9a82152f197bb4ee047928a069c03abea7600b2fa06b44bd8bc2b70c988c",
+          "Fingerprint": "sha256:f9b6d2103861f60e0ae0104372cffafa4ab3aef56c2271257f6bd79a71ea2368",
           "Title": "ca-certificates - security update",
           "Description": "Description Not Available",
           "Severity": "UNKNOWN"
@@ -2266,7 +2267,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e62fd4fe257ae0c1fc05b2cff7a6d88a4268faa751f23da026ebee353eb927f9",
+          "Fingerprint": "sha256:329accceda05ab170b694831d6c05e8ed154043c29718b713e710ae64192560b",
           "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
           "Description": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.",
           "Severity": "MEDIUM",
@@ -2291,6 +2292,7 @@
             "https://access.redhat.com/errata/RHSA-2026:89830",
             "https://access.redhat.com/errata/RHSA-2026:89891",
             "https://access.redhat.com/errata/RHSA-2026:90915",
+            "https://access.redhat.com/errata/RHSA-2026:95581",
             "https://access.redhat.com/security/cve/CVE-2026-102010",
             "https://bugzilla.redhat.com/2478395",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2478395",
@@ -2298,7 +2300,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102010",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95619",
-            "https://errata.almalinux.org/10/ALSA-2026-89891.html",
+            "https://errata.almalinux.org/8/ALSA-2026-90915.html",
             "https://errata.rockylinux.org/RLSA-2026:89830",
             "https://linux.oracle.com/cve/CVE-2026-102010.html",
             "https://linux.oracle.com/errata/ELSA-2026-90915.html",
@@ -2306,7 +2308,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-102010"
           ],
           "PublishedDate": "2026-09-28T19:16:48.83Z",
-          "LastModifiedDate": "2026-11-01T05:18:55.76Z"
+          "LastModifiedDate": "2026-11-06T08:17:17Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114690",
@@ -2328,7 +2330,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:053396f6fd310115766ba80976fbd801aabd2ae066d7ef629010d8ac9cd88bc2",
+          "Fingerprint": "sha256:45aab73237cc9cfec01497b69c74e08023762120dc52ecba82bd12be9dd6f089",
           "Title": "gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std",
           "Description": "A flaw was found in GCC. An out-of-bounds memory access vulnerability exists in the libstdc++ parallel search implementation due to an undersized internal buffer. A local attacker can exploit this flaw by providing crafted search data to an application compiled with parallel mode, causing the process to crash and leading to a Denial of Service (DoS).",
           "Severity": "MEDIUM",
@@ -2351,7 +2353,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114690"
           ],
           "PublishedDate": "2026-10-30T08:16:55.047Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.513Z"
+          "LastModifiedDate": "2026-11-06T08:17:17.84Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114691",
@@ -2373,7 +2375,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:bfb514c7f95ab0ed9274b8054786f74a519e511df568a436b33ac9f4d33ade74",
+          "Fingerprint": "sha256:a44414ffc0ed12d20e4b21d6c16252c8fc33a1f99c7870bd4e9c3b9d98aeaf78",
           "Title": "gcc: Integer wrap in `std",
           "Description": "A flaw was found in the libstdc++ component of GCC. An attacker who can provide an excessively large element count to a boolean vector (std::vector\u003cbool\u003e) constructor can trigger an integer wrap during internal memory calculations. This issue leaves the container in an inconsistent state, leading to out-of-bounds memory access and resulting in an application crash or a Denial of Service (DoS) during subsequent operations.",
           "Severity": "MEDIUM",
@@ -2396,7 +2398,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114691"
           ],
           "PublishedDate": "2026-10-30T08:16:55.257Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.693Z"
+          "LastModifiedDate": "2026-11-06T08:17:18.123Z"
         },
         {
           "VulnerabilityID": "CVE-2026-115455",
@@ -2418,7 +2420,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:dd0289679a8204092c4805546df0438d4ebd2b2a61b4407f63651f854d10337f",
+          "Fingerprint": "sha256:413f306342fa715cd3f72428ebc49f1eaf1f940b1c14b4468f2ca9598afcaca9",
           "Title": "gcc: Stack overflow in std::bitset on libstdc++",
           "Description": "A flaw was found in GCC libstdc++. When an application extracts data into a bitset from a wide-character stream, internal stack memory allocation fails to properly account for character size and alignment. An attacker capable of supplying crafted input to an affected application could trigger a stack-based buffer overflow leading denial of service (DoS).",
           "Severity": "MEDIUM",
@@ -2443,7 +2445,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-115455"
           ],
           "PublishedDate": "2026-10-30T08:16:55.463Z",
-          "LastModifiedDate": "2026-11-04T06:17:02.373Z"
+          "LastModifiedDate": "2026-11-05T17:17:41.267Z"
         },
         {
           "VulnerabilityID": "CVE-2026-95619",
@@ -2465,7 +2467,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c96d7859a55bd85d79bf0bd6b28e72723de16ba7c9a27db3e2ef111c4dc11fe4",
+          "Fingerprint": "sha256:1ab36850c10004c3ed064076a62148e55592fd82e251a6b0720a22b124c129ab",
           "Title": "gcc: libstdc++ integer overflow in `new` operator",
           "Description": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability.",
           "Severity": "MEDIUM",
@@ -2506,7 +2508,52 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-95619"
           ],
           "PublishedDate": "2026-09-22T13:17:13.3Z",
-          "LastModifiedDate": "2026-11-01T05:18:59.483Z"
+          "LastModifiedDate": "2026-11-06T08:17:39.937Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-115456",
+          "PkgID": "gcc-14-base@14.2.0-19",
+          "PkgName": "gcc-14-base",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/gcc-14-base@14.2.0-19?arch=amd64\u0026distro=debian-13.7",
+            "UID": "b1ea1d46235e5bf5"
+          },
+          "InstalledVersion": "14.2.0-19",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:1a4be5562d92d659f95e0b44b245ea5208bf5317481b9a351b07fad7fe5265ec",
+            "DiffID": "sha256:7db505d90756626f425c6c5468eca565c82f589b144ecaa4f411ad9bbf79e614"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115456",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:97d88da7bdf68c49673b272ff8888842a7b21653b34dd1e3b7eed2f4fda376b0",
+          "Title": "gcc: Out-of-bounds read in std::from_chars",
+          "Description": "A flaw was found in gcc. An attacker could cause a Denial of Service (DoS) by passing a string that is not null-terminated to the std::from_chars() function in the libstdc++ library. This issue triggers an out-of-bounds read beyond the allocated buffer, potentially leading to invalid data parsing or an application crash.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115456",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2563044",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115456",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115456"
+          ],
+          "PublishedDate": "2026-10-30T09:17:14.413Z",
+          "LastModifiedDate": "2026-11-09T19:16:41.983Z"
         },
         {
           "VulnerabilityID": "CVE-2026-18374",
@@ -2528,7 +2575,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:80d0fa6ceba6ee092032389441e5999825bd7859f1d1c2a902de99cdc60bdc97",
+          "Fingerprint": "sha256:5aa0e567d6250e4f3ab2b460c6f991f5da20fdbe0d884790b18c62776c31cd85",
           "Title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
           "Description": "Passing an effectively empty string to the `,ccs=` syntax extension of the mode argument in the `fopen` function in the GNU C Library version 2.45 or earlier may result in a heap buffer overflow when the mode string input to the function is attacker controlled.\n\n\n\nThis usage pattern is not seen in applications in common GNU/Linux distributions and applications that process user-supplied values for `ccs` should not pass them through without validation.",
           "Severity": "MEDIUM",
@@ -2551,12 +2598,12 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/08/27/6",
             "https://access.redhat.com/errata/RHSA-2026:79281",
-            "https://access.redhat.com/errata/RHSA-2026:84753",
             "https://access.redhat.com/security/cve/CVE-2026-18374",
+            "https://bugzilla.redhat.com/2513603",
+            "https://bugzilla.redhat.com/2513608",
+            "https://bugzilla.redhat.com/2523249",
             "https://bugzilla.redhat.com/2523274",
             "https://bugzilla.redhat.com/2524870",
-            "https://bugzilla.redhat.com/2525256",
-            "https://bugzilla.redhat.com/2536382",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513603",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2523249",
@@ -2570,7 +2617,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
-            "https://errata.almalinux.org/10/ALSA-2026-84753.html",
+            "https://errata.almalinux.org/9/ALSA-2026-79281.html",
             "https://errata.rockylinux.org/RLSA-2026:79281",
             "https://linux.oracle.com/cve/CVE-2026-18374.html",
             "https://linux.oracle.com/errata/ELSA-2026-84753.html",
@@ -2603,7 +2650,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:09df3c00204821a0fc8ed449876d713b2eff6dc9e36dc5567760e3cebe84143e",
+          "Fingerprint": "sha256:889dfcfda8578baa9df93b883f929259bdeb002b4dba49206447c14e386a84d5",
           "Title": "glibc: Buffer Overflow in strfmon right-justification padding",
           "Description": "Calling strfmon and strfmon_l in the GNU C Library version 2.38 to 2.44 can write past the end of the caller-supplied output buffer when a conversion uses right-justified width padding.\n\nExploitation requires an application code path that calls strfmon or strfmon_l with right-justified width padding into a destination buffer that is large enough for the padding to succeed but too small for the internal memmove call. The field width or format may be attacker-influenced or a fixed susceptible pattern in the caller.\n\nAt the time of publication, no network-facing application impact is known.",
           "Severity": "MEDIUM",
@@ -2612,6 +2659,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
+            "oracle-oval": 2,
             "redhat": 2,
             "rocky": 2,
             "ubuntu": 2
@@ -2636,6 +2684,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://errata.almalinux.org/10/ALSA-2026-76781.html",
             "https://errata.rockylinux.org/RLSA-2026:76781",
+            "https://linux.oracle.com/cve/CVE-2026-19499.html",
+            "https://linux.oracle.com/errata/ELSA-2026-76781.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-19499",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34510",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0017",
@@ -2666,7 +2716,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6f9172c491d9fbc448429847f8884fd1bd6aa2f8320b99995cfe79185ca4183d",
+          "Fingerprint": "sha256:0a796fadac8591fb816080dffe179b8cc2f117b8c1e60365d753ecccd680bf7b",
           "Title": "glibc: Fix out-of-bounds array write in tdelete",
           "Description": "Calling tdelete on a sufficiently deep tree in the GNU C Library version 2.1 to 2.44 may write one pointer past the end of an alloca-allocated array on the stack, which may crash the application.\n\nThe tdelete implementation keeps an explicit stack of parent nodes for rebalancing, which is grown as needed while descending the tree.  Two rebalancing branches push an additional entry without checking the capacity, and write past the array when the stack is exactly full. Triggering this requires a node at a depth of exactly 40 (or 40 plus a multiple of 20), which implies a tree with at least a million nodes, so an attacker must drive a large number of insertions and deletions through an application that uses tsearch and tdelete.  The written value is a pointer into a tree node and is not directly attacker controlled.  No affected application in common distributions has been identified.",
           "Severity": "MEDIUM",
@@ -2687,9 +2737,13 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:76781",
             "https://access.redhat.com/errata/RHSA-2026:79281",
             "https://access.redhat.com/security/cve/CVE-2026-19542",
+            "https://bugzilla.redhat.com/2513603",
+            "https://bugzilla.redhat.com/2513608",
+            "https://bugzilla.redhat.com/2523249",
+            "https://bugzilla.redhat.com/2523274",
+            "https://bugzilla.redhat.com/2524870",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513603",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2523249",
@@ -2703,7 +2757,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
-            "https://errata.almalinux.org/10/ALSA-2026-76781.html",
+            "https://errata.almalinux.org/9/ALSA-2026-79281.html",
             "https://errata.rockylinux.org/RLSA-2026:79281",
             "https://linux.oracle.com/cve/CVE-2026-19542.html",
             "https://linux.oracle.com/errata/ELSA-2026-80798.html",
@@ -2737,7 +2791,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f51747ef6ade8c3dd7acc72e7cd161714ef0721e9ab56a747948fd8a3f7daf43",
+          "Fingerprint": "sha256:89e78c2e94164b733d8ecbcd03a6c79b5e85115d12574991e63d0bb2e5d70483",
           "Title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
           "Description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.",
           "Severity": "MEDIUM",
@@ -2758,7 +2812,6 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-5435",
             "https://bugzilla.redhat.com/2459854",
@@ -2772,7 +2825,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
+            "https://errata.almalinux.org/9/ALSA-2026-42952.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
@@ -2807,7 +2860,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e91a4204ee8871e8fedae72d711e049dc629878a28af4a86174e5027ca57412f",
+          "Fingerprint": "sha256:351704e2b35be8f47cddcb13a1a4ff234b24e893a9bc16151ef42f50b5024901",
           "Title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
           "Description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.0.1 to version 2.43 fail to validate the RDATA content against the RDATA length in a DNS response when processing A6, CERT, LOC, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.\n\nThese functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.",
           "Severity": "MEDIUM",
@@ -2828,7 +2881,6 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-6238",
             "https://bugzilla.redhat.com/2459854",
@@ -2842,7 +2894,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
+            "https://errata.almalinux.org/9/ALSA-2026-42952.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
@@ -2877,7 +2929,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:40458f98121ce8ab8e6ce3c782e90b782b66937dfdd5525edbcbe7449e157011",
+          "Fingerprint": "sha256:0c857cf14071158be088ec6e58595dfab58cfb45a21aa6541beeb8be15a25a45",
           "Title": "glibc: glibc: Process abort due to invalid memory in wordexp",
           "Description": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.",
           "Severity": "MEDIUM",
@@ -2898,9 +2950,13 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:76781",
             "https://access.redhat.com/errata/RHSA-2026:79281",
             "https://access.redhat.com/security/cve/CVE-2026-6368",
+            "https://bugzilla.redhat.com/2513603",
+            "https://bugzilla.redhat.com/2513608",
+            "https://bugzilla.redhat.com/2523249",
+            "https://bugzilla.redhat.com/2523274",
+            "https://bugzilla.redhat.com/2524870",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513603",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2523249",
@@ -2914,7 +2970,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
-            "https://errata.almalinux.org/10/ALSA-2026-76781.html",
+            "https://errata.almalinux.org/9/ALSA-2026-79281.html",
             "https://errata.rockylinux.org/RLSA-2026:79281",
             "https://linux.oracle.com/cve/CVE-2026-6368.html",
             "https://linux.oracle.com/errata/ELSA-2026-79281.html",
@@ -2949,7 +3005,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3b956a517606d9d82f36eea78442a65133fb2eea790d7c6822e63df9fff3a37c",
+          "Fingerprint": "sha256:abc03e1d0359ee0a5e3cd4ad11c27cf748f89a76fb96116e8ce989bc4b2ce9c5",
           "Title": "glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion",
           "Description": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash.",
           "Severity": "MEDIUM",
@@ -2970,9 +3026,13 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:76781",
             "https://access.redhat.com/errata/RHSA-2026:79281",
             "https://access.redhat.com/security/cve/CVE-2026-6791",
+            "https://bugzilla.redhat.com/2513603",
+            "https://bugzilla.redhat.com/2513608",
+            "https://bugzilla.redhat.com/2523249",
+            "https://bugzilla.redhat.com/2523274",
+            "https://bugzilla.redhat.com/2524870",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513603",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2523249",
@@ -2986,7 +3046,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
-            "https://errata.almalinux.org/10/ALSA-2026-76781.html",
+            "https://errata.almalinux.org/9/ALSA-2026-79281.html",
             "https://errata.rockylinux.org/RLSA-2026:79281",
             "https://linux.oracle.com/cve/CVE-2026-6791.html",
             "https://linux.oracle.com/errata/ELSA-2026-79281.html",
@@ -3020,7 +3080,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:343b1af762cdb3f69302c68825b24cc19d7f94979296fc298b8e9a55f506377d",
+          "Fingerprint": "sha256:95b12597a07dc8f9a88ea97bc8cdc29e6035ef8d0031dda06adf27456b1af759",
           "Title": "glibc: Non-progress DoS in SHIFT_JISX0213 -\u0026gt",
           "Description": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489.",
           "Severity": "MEDIUM",
@@ -3042,12 +3102,12 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:79281",
-            "https://access.redhat.com/errata/RHSA-2026:84753",
             "https://access.redhat.com/security/cve/CVE-2026-77117",
+            "https://bugzilla.redhat.com/2513603",
+            "https://bugzilla.redhat.com/2513608",
+            "https://bugzilla.redhat.com/2523249",
             "https://bugzilla.redhat.com/2523274",
             "https://bugzilla.redhat.com/2524870",
-            "https://bugzilla.redhat.com/2525256",
-            "https://bugzilla.redhat.com/2536382",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513603",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2523249",
@@ -3061,7 +3121,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
-            "https://errata.almalinux.org/10/ALSA-2026-84753.html",
+            "https://errata.almalinux.org/9/ALSA-2026-79281.html",
             "https://errata.rockylinux.org/RLSA-2026:79281",
             "https://linux.oracle.com/cve/CVE-2026-77117.html",
             "https://linux.oracle.com/errata/ELSA-2026-84753.html",
@@ -3095,7 +3155,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:8c3419d625450c289c4d52883c0af4a4e691d1c0058e2cb1c2928a4f45e5d836",
+          "Fingerprint": "sha256:1cbacd22f6adbb048c1a69615f8642080beb7469bffe55a05bb62f13149908ab",
           "Title": "glibc: Non-progress DoS in EUC_JISX0213 -\u003e UCS-4 conversion state",
           "Description": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117.",
           "Severity": "MEDIUM",
@@ -3117,12 +3177,12 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:79281",
-            "https://access.redhat.com/errata/RHSA-2026:84753",
             "https://access.redhat.com/security/cve/CVE-2026-80489",
+            "https://bugzilla.redhat.com/2513603",
+            "https://bugzilla.redhat.com/2513608",
+            "https://bugzilla.redhat.com/2523249",
             "https://bugzilla.redhat.com/2523274",
             "https://bugzilla.redhat.com/2524870",
-            "https://bugzilla.redhat.com/2525256",
-            "https://bugzilla.redhat.com/2536382",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513603",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2513608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2523249",
@@ -3136,7 +3196,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6791",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
-            "https://errata.almalinux.org/10/ALSA-2026-84753.html",
+            "https://errata.almalinux.org/9/ALSA-2026-79281.html",
             "https://errata.rockylinux.org/RLSA-2026:79281",
             "https://linux.oracle.com/cve/CVE-2026-80489.html",
             "https://linux.oracle.com/errata/ELSA-2026-84753.html",
@@ -3170,7 +3230,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c9f32d93db42d15a3086b93c175962313ade5ff6b3680edf362ea05ef07ed693",
+          "Fingerprint": "sha256:44161eaf54f91a4a181c3e672bc77a03175259a29ba35e11f21922927dd1e065",
           "Title": "glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable",
           "Description": "The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain '/' or that are equal to \"..\", unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.\n\nThe fix for CVE-2014-0475 rejects \"..\" path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.\n\nLANGUAGE is only used when the LC_MESSAGES locale is not \"C\", \"C.\u003cencoding\u003e\" or \"POSIX\", so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.",
           "Severity": "MEDIUM",
@@ -3217,7 +3277,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9461e8d82815fab388cbb0fbaf59a689deb6325f78aff0b44065430072f2595e",
+          "Fingerprint": "sha256:16f9f52c3647760b13a338c570641506d8cd25419015abaa0ca2d2a3b5df23ea",
           "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
           "Description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
           "Severity": "MEDIUM",
@@ -3238,26 +3298,26 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/09/17/4",
-            "https://access.redhat.com/errata/RHSA-2026:84753",
+            "https://access.redhat.com/errata/RHSA-2026:95618",
             "https://access.redhat.com/security/cve/CVE-2026-8674",
-            "https://bugzilla.redhat.com/2523274",
-            "https://bugzilla.redhat.com/2524870",
-            "https://bugzilla.redhat.com/2525256",
+            "https://bugzilla.redhat.com/2531725",
             "https://bugzilla.redhat.com/2536382",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2523274",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2524870",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2525256",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18374",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
-            "https://errata.almalinux.org/10/ALSA-2026-84753.html",
-            "https://errata.rockylinux.org/RLSA-2026:84753",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
             "https://joshua.hu/fuzzing-glibc-libresolv",
             "https://linux.oracle.com/cve/CVE-2026-8674.html",
-            "https://linux.oracle.com/errata/ELSA-2026-84753.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-8674",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0021",
@@ -3287,7 +3347,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e50c0545d63e8cd13e57bc029e9f1b077c06f4789dd2450cc3ebaaaa30e848a3",
+          "Fingerprint": "sha256:45b99507143ee3103fc371ef1cd6b8db47e7e181637164c6b95e21c0945510a2",
           "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
           "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
           "Severity": "MEDIUM",
@@ -3295,7 +3355,11 @@
             "CWE-367"
           ],
           "VendorSeverity": {
-            "redhat": 2
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
           },
           "CVSS": {
             "redhat": {
@@ -3304,7 +3368,25 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
             "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-86805.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
@@ -3333,7 +3415,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:eaa5a5696095240b50264e7fc90e065d43e47eeedc2c4ae41cb1795c84befa36",
+          "Fingerprint": "sha256:c900efb163df135047dc568ba2b373182fd2e8f0572a5273aaf10668f5df4f7a",
           "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
           "Description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a \nstack overflow when a malicious DNS server returns too large a response \nfor a DNS query, resulting in degraded DNS resolution for the system.\n\n\n\nExploitation of this bug needs a system that has nscd enabled and using \nan untrusted DNS server for name resolution, with the compromised DNS \nserver being capable of processing records large enough to result in a \nstack overflow in an nscd thread stack.  During experimentation, bind 9 \nwas unable to handle large records, but that could change in future or \nwith a different name server.  In typical installations, nscd is \nexecuted in an isolated context as its own user without a shell, due to \nwhich any compromise of that service is isolated.\n\n\n\nThere is a remote possibility of nscd cache corruption if an attacker \nmanages to get the stack pointer into a desired point in the heap, \npotentially resulting in other caches in nscd being overwritten with \ncorrupt data through the stack overflow, until the buggy code path \neventually results in a crash.\n\n\n\nFinally, a crash in nscd may result in performance degradation when \nresolving names, but it does not result in a denial of service.",
           "Severity": "MEDIUM",
@@ -3341,7 +3423,10 @@
             "CWE-789"
           ],
           "VendorSeverity": {
+            "alma": 2,
+            "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "CVSS": {
@@ -3352,7 +3437,25 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/09/11/2",
+            "https://access.redhat.com/errata/RHSA-2026:95618",
             "https://access.redhat.com/security/cve/CVE-2026-89092",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-89092.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89092",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34624",
             "https://sourceware.org/git/?p=glibc.git;a=blob;f=advisories/GLIBC-SA-2026-0016",
@@ -3382,7 +3485,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:88255419dcfaa3b8f8ef3b51965c4ae6e53b97b5ec811ed42b18d0981f6b454e",
+          "Fingerprint": "sha256:40355486f210dce7c836e31baa309eac84c4d7915bdbb05e10074d525689fe0d",
           "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
           "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
           "Severity": "MEDIUM",
@@ -3390,7 +3493,10 @@
             "CWE-121"
           ],
           "VendorSeverity": {
-            "redhat": 2
+            "alma": 2,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
           },
           "CVSS": {
             "redhat": {
@@ -3399,7 +3505,25 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
             "https://access.redhat.com/security/cve/CVE-2026-95818",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-95818.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-95818",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023",
@@ -3429,7 +3553,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:a6237e484cf558c1778eae096d2fc802e361033f000a5da7278d568ca504159a",
+          "Fingerprint": "sha256:55ba6ab5aefc3524f3dd384d75005ec92e93fbb72847d9b3c35d7bffdffea02e",
           "Title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
           "Description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
           "Severity": "LOW",
@@ -3486,7 +3610,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ffbeefad81c96a947018241c6b11b3b1e806f616b018b51a9e9130c42d8d5c41",
+          "Fingerprint": "sha256:b8d97cdde432286c80ac9e0c4c71335648ea5cfd93e1a03b810d8d65367721a7",
           "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "Description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
           "Severity": "LOW",
@@ -3545,7 +3669,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f59d8646450fcfeeacd3b5a00232f7c343b256160f32613dabcdf463a3d95dbb",
+          "Fingerprint": "sha256:fb565735cf1794fe93c5519e00c470259f88ce4539dcdfe2604d8830596498d7",
           "Title": "glibc: stack guard protection bypass",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -3598,7 +3722,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6b216d692588760fd500a633442dd4cf5769acafc86146d0629a54bef347a069",
+          "Fingerprint": "sha256:5ae7192444fd81cca658db21e2b941d64c875bcec8966039ce097257ecff8f6d",
           "Title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
           "Description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -3654,7 +3778,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:0ae241728908154b03cd0495d1b5c57cd1b093c6f849e94fb87eda278f36ae03",
+          "Fingerprint": "sha256:2907933181c5bd8c6d04228290db7f4fc2f43aff7e74582a7ad95b4f9b7b5fcf",
           "Title": "glibc: ASLR bypass using cache of thread stack and heap",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -3714,7 +3838,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:48f78bf404e21b5c887362e5fd18e0ac80deaf12f552097139904a66faaacc09",
+          "Fingerprint": "sha256:17274d494b70280093e8d19da7457a2099e268fedbc94b8dcf9334db198a67b6",
           "Title": "glibc: information disclosure of heap addresses of pthread_created thread",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
           "Severity": "LOW",
@@ -3773,7 +3897,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9cfc01f9305be6d12fd674bde61fc11ee3a2ccb1194c9890f85d6cafd5586f3f",
+          "Fingerprint": "sha256:0f9e7449861f3a5a6b7bf5a1eac741726e0bb5acc5b5c9b40be3675767a78925",
           "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "Description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
           "Severity": "LOW",
@@ -3828,7 +3952,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3f4c95ae9928f0723065427922f31fd952e469d9e223ad4d3ef477bbdb1960b9",
+          "Fingerprint": "sha256:4e60082f349881a2b2335da282c7efd33e4f4e2e503edc47598bcb8117b6f7c5",
           "Title": "glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp",
           "Description": "The strncasecmp function in the GNU C Library 2.24 and later optimized for the Power8 architecture may read one byte beyond the input size limit, which may crash a program when that byte is not readable.\n\nThis condition may happen when the input strings to the strncasecmp function are attacker controlled in an application and they match all the way up to the edge of their page and the neighbouring page is either not mapped or is not readable.",
           "Severity": "LOW",
@@ -3875,7 +3999,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9bc927f4f6a0e77c4b8f152954bcbd9e1b26f3aadd8107b75c5a5106caaa08c0",
+          "Fingerprint": "sha256:e86b5ae58fb6eaa96e964c9859eb9064a44160b50792d1ea05561d87ae9d2b3e",
           "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
           "Description": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.",
           "Severity": "MEDIUM",
@@ -3900,6 +4024,7 @@
             "https://access.redhat.com/errata/RHSA-2026:89830",
             "https://access.redhat.com/errata/RHSA-2026:89891",
             "https://access.redhat.com/errata/RHSA-2026:90915",
+            "https://access.redhat.com/errata/RHSA-2026:95581",
             "https://access.redhat.com/security/cve/CVE-2026-102010",
             "https://bugzilla.redhat.com/2478395",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2478395",
@@ -3907,7 +4032,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102010",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95619",
-            "https://errata.almalinux.org/10/ALSA-2026-89891.html",
+            "https://errata.almalinux.org/8/ALSA-2026-90915.html",
             "https://errata.rockylinux.org/RLSA-2026:89830",
             "https://linux.oracle.com/cve/CVE-2026-102010.html",
             "https://linux.oracle.com/errata/ELSA-2026-90915.html",
@@ -3915,7 +4040,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-102010"
           ],
           "PublishedDate": "2026-09-28T19:16:48.83Z",
-          "LastModifiedDate": "2026-11-01T05:18:55.76Z"
+          "LastModifiedDate": "2026-11-06T08:17:17Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114690",
@@ -3937,7 +4062,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1c5a94e23a171d2ee9b7518a4c9a382b89d45b1103789362c3650acab898d427",
+          "Fingerprint": "sha256:87d6d032983a140d8b5c9129e7e62b467967b9aadf62bee9ee642aed76a2d8ec",
           "Title": "gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std",
           "Description": "A flaw was found in GCC. An out-of-bounds memory access vulnerability exists in the libstdc++ parallel search implementation due to an undersized internal buffer. A local attacker can exploit this flaw by providing crafted search data to an application compiled with parallel mode, causing the process to crash and leading to a Denial of Service (DoS).",
           "Severity": "MEDIUM",
@@ -3960,7 +4085,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114690"
           ],
           "PublishedDate": "2026-10-30T08:16:55.047Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.513Z"
+          "LastModifiedDate": "2026-11-06T08:17:17.84Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114691",
@@ -3982,7 +4107,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:7d83589639a01dadee98d4f7bd128ff8835b662c0cb46cfc5144075b036b055f",
+          "Fingerprint": "sha256:6c3bdce7c522980c5cc630c17a7c89652c3ca8c836e6fefa2993fb8a3b84b039",
           "Title": "gcc: Integer wrap in `std",
           "Description": "A flaw was found in the libstdc++ component of GCC. An attacker who can provide an excessively large element count to a boolean vector (std::vector\u003cbool\u003e) constructor can trigger an integer wrap during internal memory calculations. This issue leaves the container in an inconsistent state, leading to out-of-bounds memory access and resulting in an application crash or a Denial of Service (DoS) during subsequent operations.",
           "Severity": "MEDIUM",
@@ -4005,7 +4130,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114691"
           ],
           "PublishedDate": "2026-10-30T08:16:55.257Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.693Z"
+          "LastModifiedDate": "2026-11-06T08:17:18.123Z"
         },
         {
           "VulnerabilityID": "CVE-2026-115455",
@@ -4027,7 +4152,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:600b8ecfab5e45ea079a71d33ac97e582176b89cb7a501201b4435441dfae2d0",
+          "Fingerprint": "sha256:8a7c1d2515e5004500d10098f45113c0a1ae586ce616aa61bc852f9f304455ab",
           "Title": "gcc: Stack overflow in std::bitset on libstdc++",
           "Description": "A flaw was found in GCC libstdc++. When an application extracts data into a bitset from a wide-character stream, internal stack memory allocation fails to properly account for character size and alignment. An attacker capable of supplying crafted input to an affected application could trigger a stack-based buffer overflow leading denial of service (DoS).",
           "Severity": "MEDIUM",
@@ -4052,7 +4177,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-115455"
           ],
           "PublishedDate": "2026-10-30T08:16:55.463Z",
-          "LastModifiedDate": "2026-11-04T06:17:02.373Z"
+          "LastModifiedDate": "2026-11-05T17:17:41.267Z"
         },
         {
           "VulnerabilityID": "CVE-2026-95619",
@@ -4074,7 +4199,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:8f279fc590eb42331d82bdaa7c924d32d0327baf381e79432cc65055fe48e480",
+          "Fingerprint": "sha256:4c0a0ce5965382ab117c7d95148bb1414e59706d446d8f029ebbe65fc9291831",
           "Title": "gcc: libstdc++ integer overflow in `new` operator",
           "Description": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability.",
           "Severity": "MEDIUM",
@@ -4115,7 +4240,52 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-95619"
           ],
           "PublishedDate": "2026-09-22T13:17:13.3Z",
-          "LastModifiedDate": "2026-11-01T05:18:59.483Z"
+          "LastModifiedDate": "2026-11-06T08:17:39.937Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-115456",
+          "PkgID": "libgcc-s1@14.2.0-19",
+          "PkgName": "libgcc-s1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64\u0026distro=debian-13.7",
+            "UID": "7ab1fb1391b2e39f"
+          },
+          "InstalledVersion": "14.2.0-19",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:8224d91da70b7992430d3b04040ea38ecdef4a7b719bee38397c89aaa886e198",
+            "DiffID": "sha256:c16b2ec4b1493bad1b1de23d659c899e60abb166bda756d02792f0a03ba54a43"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115456",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:809ea86c10cebbdbfd34e6d83f4a0b92bfc551ee9a1318ca0e412b71f61b61ac",
+          "Title": "gcc: Out-of-bounds read in std::from_chars",
+          "Description": "A flaw was found in gcc. An attacker could cause a Denial of Service (DoS) by passing a string that is not null-terminated to the std::from_chars() function in the libstdc++ library. This issue triggers an out-of-bounds read beyond the allocated buffer, potentially leading to invalid data parsing or an application crash.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115456",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2563044",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115456",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115456"
+          ],
+          "PublishedDate": "2026-10-30T09:17:14.413Z",
+          "LastModifiedDate": "2026-11-09T19:16:41.983Z"
         },
         {
           "VulnerabilityID": "CVE-2026-102010",
@@ -4137,7 +4307,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e126eaeb36f644ab7e45a124a74c6f6bc1807987c2ea3f5818acd4198a699728",
+          "Fingerprint": "sha256:933b75d2cad4c3e15df7736bf75ff13353e5438e35c13360ff87270d23357080",
           "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
           "Description": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.",
           "Severity": "MEDIUM",
@@ -4162,6 +4332,7 @@
             "https://access.redhat.com/errata/RHSA-2026:89830",
             "https://access.redhat.com/errata/RHSA-2026:89891",
             "https://access.redhat.com/errata/RHSA-2026:90915",
+            "https://access.redhat.com/errata/RHSA-2026:95581",
             "https://access.redhat.com/security/cve/CVE-2026-102010",
             "https://bugzilla.redhat.com/2478395",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2478395",
@@ -4169,7 +4340,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102010",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95619",
-            "https://errata.almalinux.org/10/ALSA-2026-89891.html",
+            "https://errata.almalinux.org/8/ALSA-2026-90915.html",
             "https://errata.rockylinux.org/RLSA-2026:89830",
             "https://linux.oracle.com/cve/CVE-2026-102010.html",
             "https://linux.oracle.com/errata/ELSA-2026-90915.html",
@@ -4177,7 +4348,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-102010"
           ],
           "PublishedDate": "2026-09-28T19:16:48.83Z",
-          "LastModifiedDate": "2026-11-01T05:18:55.76Z"
+          "LastModifiedDate": "2026-11-06T08:17:17Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114690",
@@ -4199,7 +4370,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e8906be1421c2caa4f58933d8d47a6f1da3530ab64d3caf67b5317942fa04a16",
+          "Fingerprint": "sha256:ac88dc31965c27275ccf55f9a5ae56e8963217d584c428689120caa413613173",
           "Title": "gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std",
           "Description": "A flaw was found in GCC. An out-of-bounds memory access vulnerability exists in the libstdc++ parallel search implementation due to an undersized internal buffer. A local attacker can exploit this flaw by providing crafted search data to an application compiled with parallel mode, causing the process to crash and leading to a Denial of Service (DoS).",
           "Severity": "MEDIUM",
@@ -4222,7 +4393,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114690"
           ],
           "PublishedDate": "2026-10-30T08:16:55.047Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.513Z"
+          "LastModifiedDate": "2026-11-06T08:17:17.84Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114691",
@@ -4244,7 +4415,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3126e5bf7e4d27d630ac9b1edbbcf10061005e9f91cb90e83bbd691c73a97539",
+          "Fingerprint": "sha256:4c9b4a64053a64976067254622d481fdc37e5719b5d9e6a196325f3b5a446339",
           "Title": "gcc: Integer wrap in `std",
           "Description": "A flaw was found in the libstdc++ component of GCC. An attacker who can provide an excessively large element count to a boolean vector (std::vector\u003cbool\u003e) constructor can trigger an integer wrap during internal memory calculations. This issue leaves the container in an inconsistent state, leading to out-of-bounds memory access and resulting in an application crash or a Denial of Service (DoS) during subsequent operations.",
           "Severity": "MEDIUM",
@@ -4267,7 +4438,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114691"
           ],
           "PublishedDate": "2026-10-30T08:16:55.257Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.693Z"
+          "LastModifiedDate": "2026-11-06T08:17:18.123Z"
         },
         {
           "VulnerabilityID": "CVE-2026-115455",
@@ -4289,7 +4460,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3d288acc0f7acb80221623963351590ac6959d9f93c95dfeb8f58b0675ac34d0",
+          "Fingerprint": "sha256:eb709ea03916706b02fe55f579747c70512f2fdd5072799c17c24c07374359f9",
           "Title": "gcc: Stack overflow in std::bitset on libstdc++",
           "Description": "A flaw was found in GCC libstdc++. When an application extracts data into a bitset from a wide-character stream, internal stack memory allocation fails to properly account for character size and alignment. An attacker capable of supplying crafted input to an affected application could trigger a stack-based buffer overflow leading denial of service (DoS).",
           "Severity": "MEDIUM",
@@ -4314,7 +4485,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-115455"
           ],
           "PublishedDate": "2026-10-30T08:16:55.463Z",
-          "LastModifiedDate": "2026-11-04T06:17:02.373Z"
+          "LastModifiedDate": "2026-11-05T17:17:41.267Z"
         },
         {
           "VulnerabilityID": "CVE-2026-95619",
@@ -4336,7 +4507,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9a079cfe4d2a2eeb59da2ee0554bc61a283125188553262ddaf85917fbf274c8",
+          "Fingerprint": "sha256:819fb44f78b43db3da201b55559e2f3864cd60fec776d98a625b06d70b293c0b",
           "Title": "gcc: libstdc++ integer overflow in `new` operator",
           "Description": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability.",
           "Severity": "MEDIUM",
@@ -4377,7 +4548,52 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-95619"
           ],
           "PublishedDate": "2026-09-22T13:17:13.3Z",
-          "LastModifiedDate": "2026-11-01T05:18:59.483Z"
+          "LastModifiedDate": "2026-11-06T08:17:39.937Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-115456",
+          "PkgID": "libgomp1@14.2.0-19",
+          "PkgName": "libgomp1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libgomp1@14.2.0-19?arch=amd64\u0026distro=debian-13.7",
+            "UID": "dca48fa7b9fb21ba"
+          },
+          "InstalledVersion": "14.2.0-19",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:dd0d9bfd3bee080ad25a464362ec4f37ec5ca625695a4d7179fe69d207dc068d",
+            "DiffID": "sha256:1f5d28bd51650f429293f7730ede274b81dc0744aa918bc887133c4ad610258c"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115456",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:e3c3cc75c5504f41815de54cce50a9da32a78ad03252f78910f3eaf111e50a5f",
+          "Title": "gcc: Out-of-bounds read in std::from_chars",
+          "Description": "A flaw was found in gcc. An attacker could cause a Denial of Service (DoS) by passing a string that is not null-terminated to the std::from_chars() function in the libstdc++ library. This issue triggers an out-of-bounds read beyond the allocated buffer, potentially leading to invalid data parsing or an application crash.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115456",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2563044",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115456",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115456"
+          ],
+          "PublishedDate": "2026-10-30T09:17:14.413Z",
+          "LastModifiedDate": "2026-11-09T19:16:41.983Z"
         },
         {
           "VulnerabilityID": "CVE-2026-102010",
@@ -4399,7 +4615,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e7c1d352568e2fc4d94d4144a3d58e55b4131af6bbb69995cdcd24b06795bf47",
+          "Fingerprint": "sha256:59ea7338095f1c6c44eac10902ae1a3c72f4fcfff7fce9f440ee4a67f3ad6902",
           "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
           "Description": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.",
           "Severity": "MEDIUM",
@@ -4424,6 +4640,7 @@
             "https://access.redhat.com/errata/RHSA-2026:89830",
             "https://access.redhat.com/errata/RHSA-2026:89891",
             "https://access.redhat.com/errata/RHSA-2026:90915",
+            "https://access.redhat.com/errata/RHSA-2026:95581",
             "https://access.redhat.com/security/cve/CVE-2026-102010",
             "https://bugzilla.redhat.com/2478395",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2478395",
@@ -4431,7 +4648,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102010",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95619",
-            "https://errata.almalinux.org/10/ALSA-2026-89891.html",
+            "https://errata.almalinux.org/8/ALSA-2026-90915.html",
             "https://errata.rockylinux.org/RLSA-2026:89830",
             "https://linux.oracle.com/cve/CVE-2026-102010.html",
             "https://linux.oracle.com/errata/ELSA-2026-90915.html",
@@ -4439,7 +4656,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-102010"
           ],
           "PublishedDate": "2026-09-28T19:16:48.83Z",
-          "LastModifiedDate": "2026-11-01T05:18:55.76Z"
+          "LastModifiedDate": "2026-11-06T08:17:17Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114690",
@@ -4461,7 +4678,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:33ad7d0aa08f0d6b42c1afc9a8ec3581a96c9702543e41e7b398ade65e34ab8d",
+          "Fingerprint": "sha256:bc5cde88355665f2fa966c04fb2bf80977940aed4568baecff26babbe6d72299",
           "Title": "gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std",
           "Description": "A flaw was found in GCC. An out-of-bounds memory access vulnerability exists in the libstdc++ parallel search implementation due to an undersized internal buffer. A local attacker can exploit this flaw by providing crafted search data to an application compiled with parallel mode, causing the process to crash and leading to a Denial of Service (DoS).",
           "Severity": "MEDIUM",
@@ -4484,7 +4701,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114690"
           ],
           "PublishedDate": "2026-10-30T08:16:55.047Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.513Z"
+          "LastModifiedDate": "2026-11-06T08:17:17.84Z"
         },
         {
           "VulnerabilityID": "CVE-2026-114691",
@@ -4506,7 +4723,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:35c80d05a4667b70e7e92256acb3baf382d67a24634903d7c335394e1709fb07",
+          "Fingerprint": "sha256:b9a6de2020e1fd6f71c7584f9ac5324a47e124f5f0a1c9a34beb87a98cd2d982",
           "Title": "gcc: Integer wrap in `std",
           "Description": "A flaw was found in the libstdc++ component of GCC. An attacker who can provide an excessively large element count to a boolean vector (std::vector\u003cbool\u003e) constructor can trigger an integer wrap during internal memory calculations. This issue leaves the container in an inconsistent state, leading to out-of-bounds memory access and resulting in an application crash or a Denial of Service (DoS) during subsequent operations.",
           "Severity": "MEDIUM",
@@ -4529,7 +4746,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-114691"
           ],
           "PublishedDate": "2026-10-30T08:16:55.257Z",
-          "LastModifiedDate": "2026-10-30T19:18:11.693Z"
+          "LastModifiedDate": "2026-11-06T08:17:18.123Z"
         },
         {
           "VulnerabilityID": "CVE-2026-115455",
@@ -4551,7 +4768,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2251929c0b33a85b52dd9ec45f927404c4cdcdd68d4c557da00a7536cec0b614",
+          "Fingerprint": "sha256:381eb017df602ec7b638bee03856aeff55b67e4ff1db1b368f01f4242c11a3dc",
           "Title": "gcc: Stack overflow in std::bitset on libstdc++",
           "Description": "A flaw was found in GCC libstdc++. When an application extracts data into a bitset from a wide-character stream, internal stack memory allocation fails to properly account for character size and alignment. An attacker capable of supplying crafted input to an affected application could trigger a stack-based buffer overflow leading denial of service (DoS).",
           "Severity": "MEDIUM",
@@ -4576,7 +4793,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-115455"
           ],
           "PublishedDate": "2026-10-30T08:16:55.463Z",
-          "LastModifiedDate": "2026-11-04T06:17:02.373Z"
+          "LastModifiedDate": "2026-11-05T17:17:41.267Z"
         },
         {
           "VulnerabilityID": "CVE-2026-95619",
@@ -4598,7 +4815,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:60e4f4998bc4c7596f743180b45132ce72d827ddef7005999da539cf9c405a1b",
+          "Fingerprint": "sha256:dd632a5d13b73b41ce11dc9f9c3be5920a94e2d4f0d6460d2af941f95cd8f00d",
           "Title": "gcc: libstdc++ integer overflow in `new` operator",
           "Description": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability.",
           "Severity": "MEDIUM",
@@ -4639,10 +4856,58 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-95619"
           ],
           "PublishedDate": "2026-09-22T13:17:13.3Z",
-          "LastModifiedDate": "2026-11-01T05:18:59.483Z"
+          "LastModifiedDate": "2026-11-06T08:17:39.937Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-115456",
+          "PkgID": "libstdc++6@14.2.0-19",
+          "PkgName": "libstdc++6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libstdc%2B%2B6@14.2.0-19?arch=amd64\u0026distro=debian-13.7",
+            "UID": "f3c7fbb9133e1166"
+          },
+          "InstalledVersion": "14.2.0-19",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:7cc70dfd88cf2327bb827123c9156f7cb95de95b2f98f3a7a931296aacec5786",
+            "DiffID": "sha256:6e18ad80f3d64a8cbbcd1ff2e8a0d5ce7282cf664e816b86183a59d30a618e8a"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115456",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:9a7f461f0f62701aae57a7094b3974a14925f2e431f030927d557f35ffdd9e29",
+          "Title": "gcc: Out-of-bounds read in std::from_chars",
+          "Description": "A flaw was found in gcc. An attacker could cause a Denial of Service (DoS) by passing a string that is not null-terminated to the std::from_chars() function in the libstdc++ library. This issue triggers an out-of-bounds read beyond the allocated buffer, potentially leading to invalid data parsing or an application crash.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115456",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2563044",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115456",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115456"
+          ],
+          "PublishedDate": "2026-10-30T09:17:14.413Z",
+          "LastModifiedDate": "2026-11-09T19:16:41.983Z"
         },
         {
           "VulnerabilityID": "CVE-2026-76844",
+          "VendorIDs": [
+            "DSA-6613-1"
+          ],
           "PkgID": "zlib1g@1:1.3.dfsg+really1.3.1-1+b1",
           "PkgName": "zlib1g",
           "PkgIdentifier": {
@@ -4650,7 +4915,8 @@
             "UID": "ee958543a42dbedd"
           },
           "InstalledVersion": "1:1.3.dfsg+really1.3.1-1+b1",
-          "Status": "affected",
+          "FixedVersion": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "Status": "fixed",
           "Layer": {
             "Digest": "sha256:cac2ae0193cb073e7492050b05fc342a888651b4bbc966908c8793f889c299ba",
             "DiffID": "sha256:e4ba966d7f0527dfe0fcb559e4e18d4da42c4e6beae924719255e0dedb554ed0"
@@ -4661,7 +4927,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:a78f2d1363b4c62f533c1176ae23f1f477635687e286c36495961d32e30fdfbd",
+          "Fingerprint": "sha256:1c6a129eb242545bcdb5182fdebc2807ffc70c3f4531f165189bc407d7e3ecb8",
           "Title": "webpack-dev-middleware: webpack-dev-middleware: Information Disclosure via Path Traversal",
           "Description": "zlib 1.2.11 through 1.3.2 contains a heap buffer overflow: after an underlying write() fails, gz_write() returns without resetting strm.next_in, leaving it pointed at the caller's buffer. A later gz* write call then derives a position from the stale pointer and writes past a heap allocation; any write() failure reaches it, including EPIPE on a blocking descriptor, and in versions before 1.3.1.2 the failed write must be followed by a gzclearerr() call.",
           "Severity": "HIGH",
@@ -4669,6 +4935,7 @@
             "CWE-787"
           ],
           "VendorSeverity": {
+            "azure": 2,
             "ghsa": 3,
             "redhat": 3
           },
@@ -4706,7 +4973,10 @@
           "LastModifiedDate": "2026-10-12T17:10:00.163Z"
         },
         {
-          "VulnerabilityID": "CVE-2026-27171",
+          "VulnerabilityID": "CVE-2026-85091",
+          "VendorIDs": [
+            "DSA-6613-1"
+          ],
           "PkgID": "zlib1g@1:1.3.dfsg+really1.3.1-1+b1",
           "PkgName": "zlib1g",
           "PkgIdentifier": {
@@ -4714,7 +4984,63 @@
             "UID": "ee958543a42dbedd"
           },
           "InstalledVersion": "1:1.3.dfsg+really1.3.1-1+b1",
-          "Status": "affected",
+          "FixedVersion": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "Status": "fixed",
+          "Layer": {
+            "Digest": "sha256:cac2ae0193cb073e7492050b05fc342a888651b4bbc966908c8793f889c299ba",
+            "DiffID": "sha256:e4ba966d7f0527dfe0fcb559e4e18d4da42c4e6beae924719255e0dedb554ed0"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:f04aaacd4cff026cbc5ebc05eda8dfba19669b053d98621d8e93ca8d5809074e",
+          "Title": "zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution",
+          "Description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-85091",
+            "https://gist.github.com/thesmartshadow/e0b9481792afb7c31e86fee1ff084490",
+            "https://github.com/madler/zlib",
+            "https://github.com/madler/zlib/blob/v1.3.2/gzwrite.c#L393",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-85091",
+            "https://ubuntu.com/security/notices/USN-8954-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-85091",
+            "https://www.vulncheck.com/advisories/zlib-1.3.1.2-through-1.3.2-heap-buffer-overflow-via-gz-vacate"
+          ],
+          "PublishedDate": "2026-09-03T13:06:20.573Z",
+          "LastModifiedDate": "2026-09-09T20:41:07.123Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-27171",
+          "VendorIDs": [
+            "DSA-6613-1"
+          ],
+          "PkgID": "zlib1g@1:1.3.dfsg+really1.3.1-1+b1",
+          "PkgName": "zlib1g",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/zlib1g@1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64\u0026distro=debian-13.7\u0026epoch=1",
+            "UID": "ee958543a42dbedd"
+          },
+          "InstalledVersion": "1:1.3.dfsg+really1.3.1-1+b1",
+          "FixedVersion": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "Status": "fixed",
           "Layer": {
             "Digest": "sha256:cac2ae0193cb073e7492050b05fc342a888651b4bbc966908c8793f889c299ba",
             "DiffID": "sha256:e4ba966d7f0527dfe0fcb559e4e18d4da42c4e6beae924719255e0dedb554ed0"
@@ -4726,7 +5052,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:885ebe41b3a5ef53343a2674d1dd0df747788cdb9223d91796729142734173d8",
+          "Fingerprint": "sha256:599e31966ade1a2ac0063335f91b99df174f62d4a8b920e66a7b97710639894d",
           "Title": "zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions",
           "Description": "zlib before 1.3.2 allows CPU consumption via crc32_combine64 and crc32_combine_gen64 because x2nmodp can do right shifts within a loop that has no termination condition.",
           "Severity": "MEDIUM",
@@ -4773,47 +5099,6 @@
           ],
           "PublishedDate": "2026-02-18T04:16:01.263Z",
           "LastModifiedDate": "2026-06-17T10:26:47.357Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-85091",
-          "PkgID": "zlib1g@1:1.3.dfsg+really1.3.1-1+b1",
-          "PkgName": "zlib1g",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/zlib1g@1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64\u0026distro=debian-13.7\u0026epoch=1",
-            "UID": "ee958543a42dbedd"
-          },
-          "InstalledVersion": "1:1.3.dfsg+really1.3.1-1+b1",
-          "Status": "affected",
-          "Layer": {
-            "Digest": "sha256:cac2ae0193cb073e7492050b05fc342a888651b4bbc966908c8793f889c299ba",
-            "DiffID": "sha256:e4ba966d7f0527dfe0fcb559e4e18d4da42c4e6beae924719255e0dedb554ed0"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:3f63d3a586fc1590d90f1be1799f35aa1930b72b81eba1add139abcfb3694c5a",
-          "Title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
-          "Description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
-          "Severity": "MEDIUM",
-          "CweIDs": [
-            "CWE-787"
-          ],
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "References": [
-            "https://gist.github.com/thesmartshadow/e0b9481792afb7c31e86fee1ff084490",
-            "https://github.com/madler/zlib",
-            "https://github.com/madler/zlib/blob/v1.3.2/gzwrite.c#L393",
-            "https://ubuntu.com/security/notices/USN-8954-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-85091",
-            "https://www.vulncheck.com/advisories/zlib-1.3.1.2-through-1.3.2-heap-buffer-overflow-via-gz-vacate"
-          ],
-          "PublishedDate": "2026-09-03T13:06:20.573Z",
-          "LastModifiedDate": "2026-09-09T20:41:07.123Z"
         }
       ]
     },
@@ -17763,12 +18048,10 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-3449",
-            "https://advisory.echohq.com/cve/CVE-2026-3449",
             "https://github.com/TooTallNate/once",
             "https://github.com/TooTallNate/once/commit/b9f43cc5259bee2952d91ad3cdbd201a82df448a",
             "https://github.com/TooTallNate/once/issues/8",
             "https://github.com/TooTallNate/once/releases/tag/v2.0.1",
-            "https://github.com/advisories/GHSA-vpq2-c234-7xj6",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-3449",
             "https://security.snyk.io/vuln/SNYK-JS-TOOTALLNATEONCE-15250612",
             "https://www.cve.org/CVERecord?id=CVE-2026-3449"
@@ -17899,7 +18182,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-102990",
-            "https://advisory.echohq.com/cve/CVE-2026-102990",
             "https://github.com/patrickjuchli/basic-ftp",
             "https://github.com/patrickjuchli/basic-ftp/commit/d0d9e07c56e519587bb50532ac6eadbb0cb0cfe9",
             "https://github.com/patrickjuchli/basic-ftp/releases/tag/v6.2.1",
@@ -17959,7 +18241,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-111181",
-            "https://advisory.echohq.com/cve/CVE-2026-111181",
             "https://cna.openjsf.org/security-advisories.html",
             "https://github.com/expressjs/body-parser",
             "https://github.com/expressjs/body-parser/commit/1260c3845f54502a05a87594f09a334786bb34d7",
@@ -18212,13 +18493,11 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-45822",
-            "https://advisory.echohq.com/cve/CVE-2026-45822",
             "https://github.com/SamVerschueren/decode-uri-component",
             "https://github.com/SamVerschueren/decode-uri-component/blob/00662938dc7c6241547ae8abce7785cc13ffd3f6/index.js",
             "https://github.com/SamVerschueren/decode-uri-component/commit/fa479dafeede7bedf04e5c89aa78f2a78c664005",
             "https://github.com/SamVerschueren/decode-uri-component/releases/tag/v0.5.0",
             "https://github.com/SamVerschueren/decode-uri-component/security/advisories/GHSA-vcc3-ghjq-m6fr",
-            "https://github.com/advisories/GHSA-vcc3-ghjq-m6fr",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-45822",
             "https://www.cve.org/CVERecord?id=CVE-2026-45822",
             "https://www.npmjs.com/package/decode-uri-component"
@@ -18639,7 +18918,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-118773",
-            "https://advisory.echohq.com/cve/CVE-2026-118773",
             "https://github.com/isaacs/node-glob",
             "https://github.com/isaacs/node-glob/commit/4682e8c9babee1b385202ede36389634e12076d7",
             "https://github.com/isaacs/node-glob/releases/tag/v14.0.2",
@@ -20243,28 +20521,12 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:7675",
             "https://access.redhat.com/errata/RHSA-2026:7896",
             "https://access.redhat.com/security/cve/CVE-2026-26996",
-            "https://advisory.echohq.com/cve/CVE-2026-26996",
-            "https://bugzilla.redhat.com/2431340",
-            "https://bugzilla.redhat.com/2436942",
             "https://bugzilla.redhat.com/2441268",
-            "https://bugzilla.redhat.com/2447140",
-            "https://bugzilla.redhat.com/2447141",
-            "https://bugzilla.redhat.com/2447142",
-            "https://bugzilla.redhat.com/2447143",
-            "https://bugzilla.redhat.com/2447144",
-            "https://bugzilla.redhat.com/2447145",
+            "https://bugzilla.redhat.com/2442922",
             "https://bugzilla.redhat.com/2448754",
-            "https://bugzilla.redhat.com/2453037",
             "https://bugzilla.redhat.com/2453151",
-            "https://bugzilla.redhat.com/2453152",
-            "https://bugzilla.redhat.com/2453157",
-            "https://bugzilla.redhat.com/2453158",
-            "https://bugzilla.redhat.com/2453160",
-            "https://bugzilla.redhat.com/2453161",
-            "https://bugzilla.redhat.com/2453162",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2441268",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2442922",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2448754",
@@ -20274,9 +20536,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26996",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27135",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27904",
-            "https://errata.almalinux.org/10/ALSA-2026-7675.html",
+            "https://errata.almalinux.org/9/ALSA-2026-7896.html",
             "https://errata.rockylinux.org/RLSA-2026:7896",
-            "https://github.com/advisories/GHSA-3ppc-4f35-3m26",
             "https://github.com/isaacs/minimatch",
             "https://github.com/isaacs/minimatch/commit/2e111f3a79abc00fa73110195de2c0f2351904f5",
             "https://github.com/isaacs/minimatch/security/advisories/GHSA-3ppc-4f35-3m26",
@@ -20337,8 +20598,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-27903",
-            "https://advisory.echohq.com/cve/CVE-2026-27903",
-            "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
             "https://github.com/isaacs/minimatch",
             "https://github.com/isaacs/minimatch/commit/0bf499aa45f5059b56809cc3b75ff3eafeb8d748",
             "https://github.com/isaacs/minimatch/security/advisories/GHSA-7r86-cg39-jmmj",
@@ -20399,17 +20658,10 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:7080",
             "https://access.redhat.com/errata/RHSA-2026:7896",
             "https://access.redhat.com/security/cve/CVE-2026-27904",
-            "https://advisory.echohq.com/cve/CVE-2026-27904",
-            "https://bugzilla.redhat.com/2436942",
             "https://bugzilla.redhat.com/2441268",
             "https://bugzilla.redhat.com/2442922",
-            "https://bugzilla.redhat.com/2447142",
-            "https://bugzilla.redhat.com/2447143",
-            "https://bugzilla.redhat.com/2447144",
-            "https://bugzilla.redhat.com/2447145",
             "https://bugzilla.redhat.com/2448754",
             "https://bugzilla.redhat.com/2453151",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2441268",
@@ -20421,9 +20673,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26996",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27135",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27904",
-            "https://errata.almalinux.org/10/ALSA-2026-7080.html",
+            "https://errata.almalinux.org/9/ALSA-2026-7896.html",
             "https://errata.rockylinux.org/RLSA-2026:7896",
-            "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
             "https://github.com/isaacs/minimatch",
             "https://github.com/isaacs/minimatch/commit/11d0df6165d15a955462316b26d52e5efae06fce",
             "https://github.com/isaacs/minimatch/security/advisories/GHSA-23c5-xmqv-rm74",
@@ -20470,6 +20721,7 @@
           ],
           "VendorSeverity": {
             "ghsa": 2,
+            "oracle-oval": 3,
             "redhat": 2
           },
           "CVSS": {
@@ -20484,13 +20736,14 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-118764",
-            "https://advisory.echohq.com/cve/CVE-2026-118764",
             "https://github.com/isaacs/minimatch",
             "https://github.com/isaacs/minimatch/commit/297b6c1a01f2410b3ba1ebed14ba222d0c3c1033",
             "https://github.com/isaacs/minimatch/commit/77a0f5c4b80bdc641c3c930a1d9edf5ad2db57f8",
             "https://github.com/isaacs/minimatch/commit/fd0b3ab9cbc5bf1aff1c99f1f46e413c2b3340da",
             "https://github.com/isaacs/minimatch/releases/tag/v11.0.1",
             "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249",
+            "https://linux.oracle.com/cve/CVE-2026-118764.html",
+            "https://linux.oracle.com/errata/ELSA-2026-96226.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-118764",
             "https://www.cve.org/CVERecord?id=CVE-2026-118764"
           ],
@@ -20776,9 +21029,7 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-113872",
-            "https://advisory.echohq.com/cve/CVE-2026-113872",
             "https://cna.openjsf.org/security-advisories.html",
-            "https://github.com/advisories/GHSA-q7qp-rjg7-q26m",
             "https://github.com/expressjs/multer",
             "https://github.com/expressjs/multer/commit/80a2d9df1dfd63b5fab631b8b9966164ed647adf",
             "https://github.com/expressjs/multer/releases/tag/v2.5.0",
@@ -21400,7 +21651,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-113654",
-            "https://advisory.echohq.com/cve/CVE-2026-113654",
             "https://github.com/apostrophecms/apostrophe",
             "https://github.com/apostrophecms/apostrophe/commit/9500b8b0e1d630d5e07fbb5fd2c25ed0943845ce",
             "https://github.com/apostrophecms/apostrophe/commit/f84fd41cbf6c22eb8d0008fc9c25df1f7130b350",
@@ -21461,7 +21711,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-113661",
-            "https://advisory.echohq.com/cve/CVE-2026-113661",
             "https://github.com/apostrophecms/apostrophe",
             "https://github.com/apostrophecms/apostrophe/commit/9500b8b0e1d630d5e07fbb5fd2c25ed0943845ce",
             "https://github.com/apostrophecms/apostrophe/commit/f84fd41cbf6c22eb8d0008fc9c25df1f7130b350",
@@ -21516,8 +21765,6 @@
             }
           },
           "References": [
-            "https://advisory.echohq.com/cve/CVE-2026-63670",
-            "https://github.com/advisories/GHSA-jxwj-j7wr-gfrw",
             "https://github.com/apostrophecms/apostrophe",
             "https://github.com/apostrophecms/apostrophe/commit/eae1fb2b72ec5d1c27d0977509c6482a0408f725",
             "https://github.com/apostrophecms/apostrophe/pull/5501",
@@ -21621,9 +21868,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:47058",
-            "https://access.redhat.com/errata/RHSA-2026:48034",
             "https://access.redhat.com/security/cve/CVE-2026-59873",
-            "https://advisory.echohq.com/cve/CVE-2026-59873",
             "https://bugzilla.redhat.com/2494813",
             "https://bugzilla.redhat.com/2498116",
             "https://bugzilla.redhat.com/2498120",
@@ -21634,9 +21879,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-13149",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59873",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59874",
-            "https://errata.almalinux.org/10/ALSA-2026-48034.html",
+            "https://errata.almalinux.org/9/ALSA-2026-47058.html",
             "https://errata.rockylinux.org/RLSA-2026:47058",
-            "https://github.com/advisories/GHSA-23hp-3jrh-7fpw",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/2812e9338665659b183aa7226518c307044957d3",
             "https://github.com/isaacs/node-tar/releases/tag/v7.5.19",
@@ -21716,7 +21960,6 @@
             "https://access.redhat.com/errata/RHSA-2026:41928",
             "https://access.redhat.com/errata/RHSA-2026:6192",
             "https://access.redhat.com/security/cve/CVE-2026-23745",
-            "https://advisory.echohq.com/cve/CVE-2026-23745",
             "https://bugzilla.redhat.com/2425946",
             "https://bugzilla.redhat.com/2430538",
             "https://bugzilla.redhat.com/2431036",
@@ -21733,9 +21976,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23745",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23950",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-24842",
-            "https://errata.almalinux.org/10/ALSA-2026-18480.html",
+            "https://errata.almalinux.org/9/ALSA-2026-18868.html",
             "https://errata.rockylinux.org/RLSA-2026:18868",
-            "https://github.com/advisories/GHSA-8qq5-rm4j-mr97",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/340eb285b6d986e91969a1170d7fe9b0face405e",
             "https://github.com/isaacs/node-tar/security/advisories/GHSA-8qq5-rm4j-mr97",
@@ -21813,7 +22055,6 @@
             "https://access.redhat.com/errata/RHSA-2026:2926",
             "https://access.redhat.com/errata/RHSA-2026:6192",
             "https://access.redhat.com/security/cve/CVE-2026-23950",
-            "https://advisory.echohq.com/cve/CVE-2026-23950",
             "https://bugzilla.redhat.com/2425946",
             "https://bugzilla.redhat.com/2430538",
             "https://bugzilla.redhat.com/2431036",
@@ -21830,9 +22071,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23745",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23950",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-24842",
-            "https://errata.almalinux.org/10/ALSA-2026-18480.html",
+            "https://errata.almalinux.org/9/ALSA-2026-18868.html",
             "https://errata.rockylinux.org/RLSA-2026:18868",
-            "https://github.com/advisories/GHSA-r6q2-hw4h-h46w",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/3b1abfae650056edfabcbe0a0df5954d390521e6",
             "https://github.com/isaacs/node-tar/security/advisories/GHSA-r6q2-hw4h-h46w",
@@ -21905,7 +22145,6 @@
             "https://access.redhat.com/errata/RHSA-2026:5447",
             "https://access.redhat.com/errata/RHSA-2026:6192",
             "https://access.redhat.com/security/cve/CVE-2026-24842",
-            "https://advisory.echohq.com/cve/CVE-2026-24842",
             "https://bugzilla.redhat.com/2425946",
             "https://bugzilla.redhat.com/2430538",
             "https://bugzilla.redhat.com/2431036",
@@ -21922,9 +22161,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23745",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23950",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-24842",
-            "https://errata.almalinux.org/10/ALSA-2026-18480.html",
+            "https://errata.almalinux.org/9/ALSA-2026-18868.html",
             "https://errata.rockylinux.org/RLSA-2026:18868",
-            "https://github.com/advisories/GHSA-34x7-hfp2-rc4v",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/f4a7aa9bc3d717c987fdf1480ff7a64e87ffdb46",
             "https://github.com/isaacs/node-tar/security/advisories/GHSA-34x7-hfp2-rc4v",
@@ -21992,8 +22230,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-26960",
-            "https://advisory.echohq.com/cve/CVE-2026-26960",
-            "https://github.com/advisories/GHSA-83g3-92jg-28cx",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/2cb1120bcefe28d7ecc719b41441ade59c52e384",
             "https://github.com/isaacs/node-tar/commit/d18e4e1f846f4ddddc153b0f536a19c050e7499f",
@@ -22060,9 +22296,7 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-29786",
-            "https://advisory.echohq.com/cve/CVE-2026-29786",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2445476",
-            "https://github.com/advisories/GHSA-qffp-2rhf-9h96",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/7bc755dd85e623c0279e08eb3784909e6d7e4b9f",
             "https://github.com/isaacs/node-tar/security/advisories/GHSA-qffp-2rhf-9h96",
@@ -22127,8 +22361,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-31802",
-            "https://advisory.echohq.com/cve/CVE-2026-31802",
-            "https://github.com/advisories/GHSA-9ppj-qmqm-q256",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/f48b5fa3b7985ddab96dc0f2125a4ffc9911b6ad",
             "https://github.com/isaacs/node-tar/security/advisories/GHSA-9ppj-qmqm-q256",
@@ -22198,9 +22430,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:47058",
-            "https://access.redhat.com/errata/RHSA-2026:48034",
             "https://access.redhat.com/security/cve/CVE-2026-59874",
-            "https://advisory.echohq.com/cve/CVE-2026-59874",
             "https://bugzilla.redhat.com/2494813",
             "https://bugzilla.redhat.com/2498116",
             "https://bugzilla.redhat.com/2498120",
@@ -22211,9 +22441,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-13149",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59873",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59874",
-            "https://errata.almalinux.org/10/ALSA-2026-48034.html",
+            "https://errata.almalinux.org/9/ALSA-2026-47058.html",
             "https://errata.rockylinux.org/RLSA-2026:47058",
-            "https://github.com/advisories/GHSA-8x88-c5mf-7j5w",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/9e78bf058b2c22dd4d52e00d8922d5c06fc2f7b5",
             "https://github.com/isaacs/node-tar/releases/tag/v7.5.18",
@@ -22277,8 +22506,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-73566",
-            "https://advisory.echohq.com/cve/CVE-2026-73566",
-            "https://github.com/advisories/GHSA-r292-9mhp-454m",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/631ae59121bf8fc8a22bbae35f074cb9b789cd4a",
             "https://github.com/isaacs/node-tar/releases/tag/v7.5.21",
@@ -22344,8 +22571,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53655",
-            "https://advisory.echohq.com/cve/CVE-2026-53655",
-            "https://github.com/advisories/GHSA-vmf3-w455-68vh",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/security/advisories/GHSA-vmf3-w455-68vh",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53655",
@@ -22409,8 +22634,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-59871",
-            "https://advisory.echohq.com/cve/CVE-2026-59871",
-            "https://github.com/advisories/GHSA-w8wr-v893-vjvp",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/e02a4e9e013c4be95302e2eb2047a942b883c27b",
             "https://github.com/isaacs/node-tar/releases/tag/v7.5.18",
@@ -22471,8 +22694,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-59875",
-            "https://advisory.echohq.com/cve/CVE-2026-59875",
-            "https://github.com/advisories/GHSA-gvwx-54wh-qm9j",
             "https://github.com/isaacs/node-tar",
             "https://github.com/isaacs/node-tar/commit/7a635c29f5edbf083557374d43984273ecfed5b3",
             "https://github.com/isaacs/node-tar/releases/tag/v7.5.17",
@@ -22520,6 +22741,7 @@
             "amazon": 3,
             "ghsa": 3,
             "nvd": 4,
+            "oracle-oval": 3,
             "redhat": 3
           },
           "CVSS": {
@@ -22538,7 +22760,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-109383",
-            "https://advisory.echohq.com/cve/CVE-2026-109383",
             "https://cna.openjsf.org/security-advisories.html",
             "https://github.com/nodejs/undici",
             "https://github.com/nodejs/undici/commit/04cb74b1db131ff8f5b4557dce811cbf5f4664b4",
@@ -22549,6 +22770,8 @@
             "https://github.com/nodejs/undici/releases/tag/v7.30.1",
             "https://github.com/nodejs/undici/releases/tag/v8.12.2",
             "https://github.com/nodejs/undici/security/advisories/GHSA-2m5v-pch6-74hx",
+            "https://linux.oracle.com/cve/CVE-2026-109383.html",
+            "https://linux.oracle.com/errata/ELSA-2026-96226.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-109383",
             "https://www.cve.org/CVERecord?id=CVE-2026-109383"
           ],
@@ -22592,6 +22815,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "ghsa": 3,
+            "oracle-oval": 3,
             "redhat": 3
           },
           "CVSS": {
@@ -22606,7 +22830,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-109869",
-            "https://advisory.echohq.com/cve/CVE-2026-109869",
             "https://cna.openjsf.org/security-advisories.html",
             "https://github.com/nodejs/undici",
             "https://github.com/nodejs/undici/commit/07ded4941b1e72afec862958c3b8ddf468f3b429",
@@ -22617,6 +22840,8 @@
             "https://github.com/nodejs/undici/releases/tag/v7.30.1",
             "https://github.com/nodejs/undici/releases/tag/v8.12.2",
             "https://github.com/nodejs/undici/security/advisories/GHSA-xjj6-f33q-929c",
+            "https://linux.oracle.com/cve/CVE-2026-109869.html",
+            "https://linux.oracle.com/errata/ELSA-2026-96226.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-109869",
             "https://www.cve.org/CVERecord?id=CVE-2026-109869"
           ],
@@ -22660,6 +22885,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "ghsa": 3,
+            "oracle-oval": 3,
             "redhat": 3
           },
           "CVSS": {
@@ -22674,7 +22900,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-87018",
-            "https://advisory.echohq.com/cve/CVE-2026-87018",
             "https://cna.openjsf.org/security-advisories.html",
             "https://github.com/nodejs/undici",
             "https://github.com/nodejs/undici/commit/12cfd96c3f430897656e3edc1c5e02be8c1cd309",
@@ -22684,6 +22909,8 @@
             "https://github.com/nodejs/undici/releases/tag/v7.30.1",
             "https://github.com/nodejs/undici/releases/tag/v8.12.2",
             "https://github.com/nodejs/undici/security/advisories/GHSA-qrxm-fqhp-jwvm",
+            "https://linux.oracle.com/cve/CVE-2026-87018.html",
+            "https://linux.oracle.com/errata/ELSA-2026-96226.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-87018",
             "https://www.cve.org/CVERecord?id=CVE-2026-87018"
           ],
@@ -22745,7 +22972,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-109924",
-            "https://advisory.echohq.com/cve/CVE-2026-109924",
             "https://cna.openjsf.org/security-advisories.html",
             "https://github.com/nodejs/undici",
             "https://github.com/nodejs/undici/commit/299162740d5f39120092277e70efacb4d151c1c6",
@@ -22819,7 +23045,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-109932",
-            "https://advisory.echohq.com/cve/CVE-2026-109932",
             "https://cna.openjsf.org/security-advisories.html",
             "https://github.com/nodejs/undici",
             "https://github.com/nodejs/undici/commit/39f93e142df03e559fe7c3d1fc7fba9beee2c185",

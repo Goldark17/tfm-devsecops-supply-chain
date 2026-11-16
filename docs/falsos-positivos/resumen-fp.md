@@ -19,5 +19,3 @@
 | Trivy | 100 % | solo CRITICAL (codigo e imagen) |
 
 Filas sin revisar: 0. Los ND se excluyen del calculo.
-
-Guardado en /workspaces/tfm-devsecops-supply-chain/docs/falsos-positivos/resumen-fp.md

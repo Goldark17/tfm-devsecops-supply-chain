@@ -1,0 +1,23 @@
+# Resumen de falsos positivos
+
+| Herramienta | Estrato | Revisados / total | Muestreo | VP | FP | ND | Sin revisar | Precision | IC 95 % (si aleatoria) |
+|---|---|---|---|---|---|---|---|---|---|
+| Gitleaks | private-key | 3 / 3 | censo | 3 | 0 | 0 | 0 | 100 % |  |
+| Semgrep | ERROR | 13 / 13 | censo | 4 | 9 | 0 | 0 | 31 % |  |
+| Trivy | CRITICAL-codigo | 9 / 9 | censo | 9 | 0 | 0 | 0 | 100 % |  |
+| Trivy | CRITICAL-imagen | 11 / 11 | censo | 11 | 0 | 0 | 0 | 100 % |  |
+| Gitleaks | generic-api-key | 20 / 54 | aleatoria | 0 | 20 | 0 | 0 | 0 % | 0 % – 16 % |
+| Gitleaks | jwt | 12 / 12 | censo | 0 | 12 | 0 | 0 | 0 % |  |
+| Semgrep | resto | 7 / 30 | aleatoria | 5 | 2 | 0 | 0 | 71 % | 36 % – 92 % |
+
+## Precision por herramienta (ponderada por el tamano de cada estrato, solo sobre lo muestreado)
+
+| Herramienta | Precision ponderada | Alcance |
+|---|---|---|
+| Gitleaks | 4 % | todos los hallazgos (3 reglas) |
+| Semgrep | 59 % | ERROR (censo) + resto (muestra) |
+| Trivy | 100 % | solo CRITICAL (codigo e imagen) |
+
+Filas sin revisar: 0. Los ND se excluyen del calculo.
+
+Guardado en /workspaces/tfm-devsecops-supply-chain/docs/falsos-positivos/resumen-fp.md

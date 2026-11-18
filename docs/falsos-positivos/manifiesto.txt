@@ -1,0 +1,9 @@
+fecha de generacion (UTC): 2026-11-16 11:29
+semilla: 20261126
+commit del objetivo: 717f5efa886b0417eeecb52378b03cf10567b7e2
+gitleaks: umbral censo 15, muestra 20; semgrep: todos los ERROR + 7 del resto; trivy: todos los CRITICAL
+
+8d5bb2e2a6d7895030b7d6e01f5ae152277f380fc8ced2393353a581c4df8f43  gitleaks.json
+f4f41344f120f24ba678da744fc3f8cf69199e325cced234a7f11f0fe4ddaf42  semgrep.json
+27e8c187afbb0e0b8bd4bb80f800a0b2be355d68ed484bbc3c3891f5ff21eb23  trivy-fs.json
+6768a98eb34ac01d20dc68cf92c342f69325f7f71a56d96fad5a5d9c351c33b4  trivy-image.json

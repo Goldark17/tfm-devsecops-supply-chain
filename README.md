@@ -42,6 +42,22 @@ El script:
 
 Tarda entre 4 y 5 minutos. Los informes JSON y `tiempos.csv` quedan en `lab/results/`.
 
+### Resultados esperados
+
+Si todo ha ido bien, la tabla final debe mostrar estas cifras:
+
+| Herramienta | Hallazgos esperados | ¿Puede variar? |
+| --- | --- | --- |
+| Gitleaks | 69 (3 claves privadas) | No |
+| Semgrep | 43 (13 de severidad ERROR) | Solo si cambian sus reglas |
+| Trivy (código) | 68 (9 CRITICAL) | Sí, puede crecer con el tiempo |
+| Trivy (imagen) | entre 125 y 138 en noviembre de 2026 (11 CRITICAL) | Sí, puede crecer con el tiempo |
+| Syft (SBOM) | 739 librerías | No |
+
+El quality gate debe terminar en **PIPELINE BLOQUEADO**, que es lo correcto, porque Juice Shop es vulnerable a propósito.
+
+Gitleaks y Syft analizan un commit y una imagen fijados, así que sus cifras se repiten exactamente. Semgrep también, salvo que cambien las reglas que descarga de su registro. Las de Trivy dependen de su base de datos de vulnerabilidades, que se actualiza a diario, y del `package-lock.json` generado en cada ejecución, por eso pueden crecer aunque el objetivo no cambie. Para medir los falsos positivos se usó una instantánea de los informes del 16 de noviembre de 2026, protegida con un manifiesto SHA-256 en `docs/falsos-positivos/`.
+
 ### Otros usos
 
 ```bash

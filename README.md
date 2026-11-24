@@ -50,13 +50,13 @@ Si todo ha ido bien, la tabla final debe mostrar estas cifras:
 | --- | --- | --- |
 | Gitleaks | 69 (3 claves privadas) | No |
 | Semgrep | 43 (13 de severidad ERROR) | Solo si cambian sus reglas |
-| Trivy (código) | 68 (9 CRITICAL) | Sí, puede crecer con el tiempo |
-| Trivy (imagen) | entre 125 y 138 en noviembre de 2026 (11 CRITICAL) | Sí, puede crecer con el tiempo |
+| Trivy (código) | entre 67 y 68 (9 CRITICAL) | Sí, cambia con el tiempo |
+| Trivy (imagen) | entre 125 y 153 en noviembre de 2026 (11 CRITICAL) | Sí, cambia con el tiempo |
 | Syft (SBOM) | 739 librerías | No |
 
 El quality gate debe terminar en **PIPELINE BLOQUEADO**, que es lo correcto, porque Juice Shop es vulnerable a propósito.
 
-Gitleaks y Syft analizan un commit y una imagen fijados, así que sus cifras se repiten exactamente. Semgrep también, salvo que cambien las reglas que descarga de su registro. Las de Trivy dependen de su base de datos de vulnerabilidades, que se actualiza a diario, y del `package-lock.json` generado en cada ejecución, por eso pueden crecer aunque el objetivo no cambie. Para medir los falsos positivos se usó una instantánea de los informes del 16 de noviembre de 2026, protegida con un manifiesto SHA-256 en `docs/falsos-positivos/`.
+Gitleaks y Syft analizan un commit y una imagen fijados, así que sus cifras se repiten exactamente. Semgrep también, salvo que cambien las reglas que descarga de su registro. Las de Trivy dependen de su base de datos de vulnerabilidades, que se actualiza a diario, y del `package-lock.json` generado en cada ejecución, por eso cambian aunque el objetivo no cambie. Los CRITICAL, que son los que deciden el quality gate, se han mantenido estables en todas las mediciones. Para medir los falsos positivos se usó una instantánea de los informes del 16 de noviembre de 2026, protegida con un manifiesto SHA-256 en `docs/falsos-positivos/`.
 
 ### Otros usos
 
@@ -108,7 +108,7 @@ Sobre Juice Shop el gate **bloquea** con los umbrales por defecto (ejecución en
 
 ## Reproducibilidad
 
-- Gitleaks, Semgrep y Syft dan los mismos recuentos en cada ejecución porque todas sus entradas están fijadas.
+- Gitleaks y Syft dan los mismos recuentos en cada ejecución porque todas sus entradas están fijadas. Semgrep también, salvo que cambien las reglas de su registro.
 - **Trivy cambia entre días**: su base de datos de vulnerabilidades se actualiza a diario y no está fijada. Dentro de un mismo día los recuentos son idénticos. Anota siempre la fecha de cada medición.
 - El `package-lock.json` se genera a la fecha de ejecución, por lo que las versiones resueltas pueden variar con el tiempo.
 - Las reglas de Semgrep se descargan de su registro en cada ejecución.

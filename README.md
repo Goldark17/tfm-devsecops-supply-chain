@@ -50,7 +50,7 @@ Si todo ha ido bien, la tabla final debe mostrar estas cifras:
 | --- | --- | --- |
 | Gitleaks | 69 (3 claves privadas) | No |
 | Semgrep | 43 (13 de severidad ERROR) | Solo si cambian sus reglas |
-| Trivy (código) | entre 67 y 68 (9 CRITICAL) | Sí, cambia con el tiempo |
+| Trivy (código) | entre 67 y 70 (9 CRITICAL) | Sí, cambia con el tiempo |
 | Trivy (imagen) | entre 125 y 153 en noviembre de 2026 (11 CRITICAL) | Sí, cambia con el tiempo |
 | Syft (SBOM) | 739 librerías | No |
 
